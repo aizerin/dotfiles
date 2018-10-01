@@ -1,0 +1,6 @@
+alias ssc="cd ~/dev/projects/cardif-ssc-portal/liferay-workspace/modules/ssc.liferay.union.widgets"
+alias hypo="cd ~/dev/projects/b2b-hypo"
+
+alias ys="yarn start"
+alias yr="yarn run"
+alias yt="yarn test"

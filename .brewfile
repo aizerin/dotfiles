@@ -1,0 +1,18 @@
+update
+upgrade
+install coreutils
+install stow
+install git
+install yarn
+install watchman
+install jenv
+install nvm
+install wget
+
+install caskroom/cask/brew-cask
+
+cask install docker
+cask install google-chrome
+cask install iterm2
+
+cleanup
