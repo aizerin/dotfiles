@@ -3,6 +3,8 @@ export ZSH=/Users/lukas/.oh-my-zsh
 
 ZSH_THEME="my-lambda"
 
+eval $(thefuck --alias)
+
 export fpath=( "$HOME/.zfunctions" $fpath )
 
 plugins=(git npm yarn docker lein zsh-syntax-highlighting zsh-autosuggestions)

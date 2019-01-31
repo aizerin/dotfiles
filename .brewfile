@@ -14,5 +14,10 @@ install caskroom/cask/brew-cask
 cask install docker
 cask install google-chrome
 cask install iterm2
+cask install keeweb
+cask install slack
+cask install postman
+cask install vlc
+cask install itsycal
 
 cleanup
