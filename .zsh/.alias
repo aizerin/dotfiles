@@ -6,7 +6,9 @@ alias yr="yarn run"
 alias yt="yarn test"
 
 killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
+restartAudio() { sudo pkill coreaudiod }
 
-killAllContainers() { docker kill $(docker ps -q) }
-deleteAllContainers() { docker rm $(docker ps -a -q) }
-deleteAllImages() { docker rmi $(docker images -q) }
+d-killAllContainers() { docker kill $(docker ps -q) }
+d-deleteAllContainers() { docker rm $(docker ps -a -q) }
+d-deleteAllImages() { docker rmi $(docker images -q) }
+d-safeClean() { docker system prune -a }
