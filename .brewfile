@@ -3,11 +3,15 @@ upgrade
 install coreutils
 install stow
 install git
+install tig
 install yarn
 install watchman
 install jenv
 install nvm
 install wget
+install fzy
+install midnight-commander
+install the_silver_searcher
 
 install caskroom/cask/brew-cask
 

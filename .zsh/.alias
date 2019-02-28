@@ -1,9 +1,11 @@
-alias ssc="cd ~/dev/projects/cardif-ssc-portal/liferay-workspace/modules/ssc.liferay.union.widgets"
-alias hypo="cd ~/dev/projects/b2b-hypo"
+alias prj="cd ~/dev/projects"
 
 alias ys="yarn start"
 alias yr="yarn run"
 alias yt="yarn test"
+
+alias findFzy="ag -g . | fzy"
+alias findDev="cd ~/dev && findFzy"
 
 killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
 restartAudio() { sudo pkill coreaudiod }
@@ -12,3 +14,4 @@ d-killAllContainers() { docker kill $(docker ps -q) }
 d-deleteAllContainers() { docker rm $(docker ps -a -q) }
 d-deleteAllImages() { docker rmi $(docker images -q) }
 d-safeClean() { docker system prune -a }
+d-bash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
