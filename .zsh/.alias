@@ -1,4 +1,7 @@
 alias prj="cd ~/dev/projects"
+alias aqc="cd ~/dev/projects/aquacash"
+alias aqc-d="cd ~/dev/projects/aquacash/docs"
+alias aqc-k="cd ~/dev/projects/aquacash/codebase-kotlin"
 
 alias ys="yarn start"
 alias yr="yarn run"
@@ -15,3 +18,5 @@ d-deleteAllContainers() { docker rm $(docker ps -a -q) }
 d-deleteAllImages() { docker rmi $(docker images -q) }
 d-safeClean() { docker system prune -a }
 d-bash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+
+noSleep() { pmset noidle }
