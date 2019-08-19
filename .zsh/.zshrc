@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-export ZSH=/Users/lukas/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
+ZSH_CUSTOM=$HOME/.zsh_custom
 ZSH_THEME="my-lambda"
 
 eval $(thefuck --alias)

@@ -15,3 +15,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 stow .zsh
 ```
+
+manual install
+
+wunderlist
+freechat for facebook messenger
