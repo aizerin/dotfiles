@@ -18,5 +18,5 @@ stow .zsh
 
 manual install
 
-wunderlist
-freechat for facebook messenger
+microsoft todo
+https://github.com/rsms/fb-mac-messenger
