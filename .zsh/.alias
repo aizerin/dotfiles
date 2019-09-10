@@ -2,13 +2,12 @@ alias prj="cd ~/dev/projects"
 alias aqc="cd ~/dev/projects/aquacash"
 alias aqc-d="cd ~/dev/projects/aquacash/docs"
 alias aqc-k="cd ~/dev/projects/aquacash/codebase-kotlin"
+alias aqc-generate="aqc-d cd api/openapi && npx nodemon generate.js"
+alias aqc-swagger="aqc-d cd api && docker-compose up -d"
 
 alias ys="yarn start"
 alias yr="yarn run"
 alias yt="yarn test"
-
-alias findFzy="ag -g . | fzy"
-alias findDev="cd ~/dev && findFzy"
 
 killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
 restartAudio() { sudo pkill coreaudiod }
@@ -18,5 +17,10 @@ d-deleteAllContainers() { docker rm $(docker ps -a -q) }
 d-deleteAllImages() { docker rmi $(docker images -q) }
 d-safeClean() { docker system prune -a }
 d-bash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+d-sh() { docker exec -it $(docker ps -aqf "name=$1") sh; }
 
 noSleep() { pmset noidle }
+
+updateFrom() {rsync -vhaHE --update --progress --exclude=node_modules --exclude=out --exclude=build --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas && rsync -vhaHE --ignore-existing --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas && rsync -vhaHE --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas --delete}
+
+updateTo() {rsync -vhaHE --update --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas && rsync -vhaHE --ignore-existing --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas && rsync -vhaHE --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas --delete}

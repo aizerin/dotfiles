@@ -10,6 +10,7 @@ brew "wget"
 brew "midnight-commander"
 brew "zsh-syntax-highlighting"
 brew "thefuck"
+brew "rsync"
 
 tap "homebrew/cask"
 
