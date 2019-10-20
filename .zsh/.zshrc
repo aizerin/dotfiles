@@ -16,3 +16,6 @@ eval "$(jenv init -)"
 
 source ~/.export
 source ~/.alias
+
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line

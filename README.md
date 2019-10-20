@@ -20,7 +20,6 @@ stow .zsh
 
 microsoft todo
 https://github.com/rsms/fb-mac-messenger
-https://github.com/LanikSJ/slack-dark-mode
 
 ## ssh remote login
 
