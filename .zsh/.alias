@@ -3,15 +3,15 @@ alias cpas="cd ~/dev/cpas"
 alias gef="cd ~/dev/cpas/gef"
 alias gefui="gef && cd gef-ui-framework"
 alias gefbe="gef && cd gef-framework"
-alias gefui-comp="gefui && cd modules/gef-ui-components"
-alias gefui-comp-docs="gefui-comp && cd docs && yarn start"
 
 alias ys="yarn start"
 alias yr="yarn run"
 alias yt="yarn test"
 
-alias amend="git commit --amend --no-edit"
-alias force="git push --force"
+alias ga="git commit --amend --no-edit"
+alias gf="git push --force"
+alias gaf="ga && gf"
+alias gaaf="git add . && gaf"
 
 killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
 restartAudio() { sudo pkill coreaudiod }
