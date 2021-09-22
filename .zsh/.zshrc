@@ -4,18 +4,23 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh_custom
 ZSH_THEME="my-lambda"
 
-eval $(thefuck --alias)
+export fpath=("$HOME/.zfunctions" $fpath)
 
-export fpath=( "$HOME/.zfunctions" $fpath )
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 
-plugins=(git npm yarn docker lein zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(evalcache zsh-nvm git docker zsh-syntax-highlighting zsh-autosuggestions kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(jenv init -)"
+_evalcache jenv init -
+_evalcache thefuck --alias
 
 source ~/.export
 source ~/.alias
+source ~/.secret
 
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

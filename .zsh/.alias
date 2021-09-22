@@ -1,9 +1,8 @@
 alias prj="cd ~/dev/projects"
 alias cpas="cd ~/dev/cpas"
 alias gef="cd ~/dev/cpas/gef"
-alias gefui="gef && cd gef-ui-framework"
-alias gefbe="gef && cd gef-framework"
 
+alias y="yarn"
 alias ys="yarn start"
 alias yr="yarn run"
 alias yt="yarn test"
@@ -12,16 +11,10 @@ alias ga="git commit --amend --no-edit"
 alias gf="git push --force"
 alias gaf="ga && gf"
 alias gaaf="git add . && gaf"
+alias gfo="git fetch origin"
 
 killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
 restartAudio() { sudo pkill coreaudiod }
-
-d-killAllContainers() { docker kill $(docker ps -q) }
-d-deleteAllContainers() { docker rm $(docker ps -a -q) }
-d-deleteAllImages() { docker rmi $(docker images -q) }
-d-safeClean() { docker system prune -a }
-d-bash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
-d-sh() { docker exec -it $(docker ps -aqf "name=$1") sh; }
 
 noSleep() { pmset noidle }
 

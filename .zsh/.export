@@ -1,6 +1,3 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOMNE/.nvm:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
 export GROOVY_HOME=$(brew --prefix)/opt/groovy/libexec
