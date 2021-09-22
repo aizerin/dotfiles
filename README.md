@@ -16,11 +16,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 stow .zsh
 ```
 
-## manual install or don't have time to setup automatically
-
-microsoft todo
-https://github.com/rsms/fb-mac-messenger
-
 ## ssh remote login
 
 enable in sharing (todo script)
@@ -64,3 +59,7 @@ defaults write com.apple.dock autohide -bool true && defaults write com.apple.do
 ## other
 
 `jenv enable-plugin export`
+
+
+
+sudo brew services start asimov

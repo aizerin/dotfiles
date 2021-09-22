@@ -1,9 +1,10 @@
+alias pinentry='pinentry-mac'
+
 alias prj="cd ~/dev/projects"
 alias cpas="cd ~/dev/cpas"
 alias gef="cd ~/dev/cpas/gef"
-alias gefui="gef && cd gef-ui-framework"
-alias gefbe="gef && cd gef-framework"
 
+alias y="yarn"
 alias ys="yarn start"
 alias yr="yarn run"
 alias yt="yarn test"
@@ -12,19 +13,31 @@ alias ga="git commit --amend --no-edit"
 alias gf="git push --force"
 alias gaf="ga && gf"
 alias gaaf="git add . && gaf"
+alias gfo="git fetch origin"
+
+gph() {
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    echo $branch
+    git fetch origin
+    git reset --hard "origin/${branch}"
+    git pull
+}
 
 killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
 restartAudio() { sudo pkill coreaudiod }
 
-d-killAllContainers() { docker kill $(docker ps -q) }
-d-deleteAllContainers() { docker rm $(docker ps -a -q) }
-d-deleteAllImages() { docker rmi $(docker images -q) }
-d-safeClean() { docker system prune -a }
-d-bash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
-d-sh() { docker exec -it $(docker ps -aqf "name=$1") sh; }
-
 noSleep() { pmset noidle }
 
-updateFrom() {rsync -vhaHE --update --progress --exclude=node_modules --exclude=out --exclude=build --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas && rsync -vhaHE --ignore-existing --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas && rsync -vhaHE --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas --delete}
-
-updateTo() {rsync -vhaHE --update --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas && rsync -vhaHE --ignore-existing --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas && rsync -vhaHE --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas --delete}
+nfelTokenAT() {
+    response=$(curl --silent X POST \
+'https://api-test.cpas.cz:443/auth/oauth/v2/token?grant_type=password&username=Nfel_test1&password=Nco25niI&client_id=471e58b8-b1b9-459d-85ba-3a41bb2fff29&scope=nfel&client_secret=341ddee3-cc64-47f5-8183-2ad3dd7f20d6' \
+-H 'Content-Type: application/x-www-form-urlencoded' \
+-H 'cache-control: no-cache' \
+-d undefined=)
+    echo --- RAW OUTPUT ---
+    echo $response
+    echo --- BEARER COPIED TO CLIPBOARD ---
+    accessToken=$(echo $response | jq -r '."access_token"')
+    echo Bearer $accessToken
+    echo Bearer $accessToken | pbcopy
+}
