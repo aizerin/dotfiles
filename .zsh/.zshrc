@@ -9,11 +9,10 @@ export fpath=("$HOME/.zfunctions" $fpath)
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 
-plugins=(evalcache zsh-nvm git docker zsh-syntax-highlighting zsh-autosuggestions kubectl)
+plugins=(evalcache zsh-nvm git docker zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-_evalcache jenv init -
 _evalcache thefuck --alias
 
 source ~/.export

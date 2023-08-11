@@ -1,11 +1,11 @@
-alias prj="cd ~/dev/projects"
-alias cpas="cd ~/dev/cpas"
-alias gef="cd ~/dev/cpas/gef"
-
 alias y="yarn"
 alias ys="yarn start"
 alias yr="yarn run"
 alias yt="yarn test"
+
+alias n="npm"
+alias ni="npm i"
+alias nr="npm run"
 
 alias ga="git commit --amend --no-edit"
 alias gf="git push --force"
@@ -17,7 +17,3 @@ killPort() { lsof -nP -t -i4TCP:"$1" | xargs kill -9 }
 restartAudio() { sudo pkill coreaudiod }
 
 noSleep() { pmset noidle }
-
-updateFrom() {rsync -vhaHE --update --progress --exclude=node_modules --exclude=out --exclude=build --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas && rsync -vhaHE --ignore-existing --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas && rsync -vhaHE --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target lukas@192.168.0.102:/Users/lukas/dev /Users/lukas --delete}
-
-updateTo() {rsync -vhaHE --update --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas && rsync -vhaHE --ignore-existing --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas && rsync -vhaHE --progress --exclude=node_modules --exclude=build --exclude=out --exclude=target /Users/lukas/dev lukas@192.168.0.102:/Users/lukas --delete}
